@@ -1,0 +1,42 @@
+.parallax {
+    /* The image used */
+    background-image: url("../images/noticeback.jpg");
+	width:100% !important;
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	margin-bottom:-24px;
+}
+.noticeblock{
+	
+	margin-bottom:-24px;
+	
+  
+
+}
+.board{
+	border-style: solid;
+    border-color: #CC0479;
+	border-width:3px;
+	text-align:center;
+	background-color:#E6E9EB;
+	 background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	width:100% !important;
+}
+.nav-link{
+	color:black !important;
+}
+.top{
+	background-image:none !important;
+	background-color:transparent !important;
+	background-repeat: no-repeat;
+	width:100% !important;
+}

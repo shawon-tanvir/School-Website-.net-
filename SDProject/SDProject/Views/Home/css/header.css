@@ -1,0 +1,44 @@
+.top{
+	background-image:url("../images/headerback.png");
+	background-repeat: no-repeat;
+	width:100% !important;
+}
+.logo{
+	
+	width:180px;
+	height:120px;
+	margin-left:0px;
+}
+.logoback{
+	
+	 width: 100%;
+    height: 120px;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin:0;
+	padding:0;
+	
+}
+.nav-link{
+	
+}
+.buttonpos{
+	margin-top:10px;;
+	float:right;
+}
+.headlink{
+	color:black;
+	font-size:20px;
+	text-align:center;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;
+}
+.headlink{
+	text-align:center;
+}
+
+.my-nav {
+	margin-top:20px;
+  margin-left:0;
+  background-color:transparent !important;
+}

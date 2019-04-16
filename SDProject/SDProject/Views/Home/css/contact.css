@@ -1,0 +1,115 @@
+hr {
+height: 1px;
+color: #0AEB3B5;
+background-color: #AEB3B5;
+border: none;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../images/homeback.jpg");
+
+    /* Set a specific height */
+    height: 2000px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top{
+	background-image:none !important;
+	background-color:transparent !important;
+	background-repeat: no-repeat;
+	width:100% !important;
+}
+.nav-link{
+	color:black !important;
+	font-size:20px;
+	font-weight:bold;
+}
+.frame{
+	width:500px;
+	height:300px;
+}
+.nopadding{
+	margin:0 !important;
+	padding:0 !important;
+	background-image: url("../images/back2.jpg");
+	height: 700px;
+	background-size: cover;
+	width:100%;
+}
+.conrow{
+	height:80px;
+}
+.ch{
+	margin-bottom:15px;
+	
+}
+.ch1{
+	margin-bottom:15px;
+	margin-top:20px;
+}
+.col-md-6{
+	padding-top:60px;
+	background-color:white;
+}
+.thumbnail{
+	margin-left:10px;
+	margin-right:0px;
+}
+.container{
+	
+}
+.textarearesize{
+	resize: none;
+}
+.text1{
+	padding-left:30%;
+	padding-top:40%;
+}
+.text2{
+	padding-top:20px;
+	padding-left:30%;
+}
+.text3{
+	padding-top:20px;
+	padding-left:30%;
+}
+.gmail{
+	float:left;
+	margin-left:240px;
+}
+.bback{
+	background-color:#CCCACB;
+	height:550px;
+}
+@media screen and (max-width: 766px){
+.bback{
+	background-color:#CCCACB;
+	height:750px;
+}
+
+}
+@media screen and (max-width: 480px) and (min-width:435px) {
+	.gmail{
+	float:left;
+	margin-left:200px;
+}
+
+
+}
+@media screen and (max-width: 435px) {
+	.gmail{
+	float:left;
+	margin-left:80px;
+}
+	.conrow{
+		height:120px;
+	}
+	
+}
+}
+
+}

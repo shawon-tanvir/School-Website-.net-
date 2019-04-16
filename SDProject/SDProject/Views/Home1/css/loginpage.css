@@ -1,0 +1,75 @@
+.already{
+	margin-left:28%;
+	font-weight:bold;
+}
+.already2{
+	margin-left:40%;
+	font-weight:bold;
+	color:black;
+}
+.logmod{
+	margin-top:0px;
+	margin-bottom:0px;
+	
+}
+.prey{
+	margin-left:90px;
+}
+.errordiv{
+	margin-left:-20px !important;
+}
+.logo{
+	
+	width:380px;
+	height:120px;
+	padding-left:50px;
+	padding-right:50px;
+}
+.logoback{
+	
+	width: 100px !important;
+    height: 120px !important;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin:0;
+	padding:0;
+	
+}
+.loginBackground{
+	background-image:url("../images/loginBackground4.jpg");
+	height:auto;
+	overflow:auto;opacity:1; width: 100%;
+	
+					
+}
+.logback2{
+	float:right;
+	z-index:100;
+	padding-right:20px;
+	background-color:white;
+	width:400px !important;
+	height:700px !important;
+
+	
+}
+@media screen and (max-width: 400px) {
+	.logback2{
+	float:right;
+	z-index:100;
+	padding-right:20px;
+	background-color:white;
+	width:280px !important;
+	height:700px !important;
+
+	
+}
+.logo{
+	
+	width:380px;
+	height:120px;
+	margin-left:-40px;
+	padding-left:0px;
+	padding-right:50px;
+}
+}

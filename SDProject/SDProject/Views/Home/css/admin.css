@@ -1,0 +1,28 @@
+.parallax {
+    /* The image used */
+    background-image: url("../images/homeback.jpg");
+
+    /* Set a specific height */
+    height: 2100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top{
+	background-image:none !important;
+	background-color:transparent !important;
+	background-repeat: no-repeat;
+	width:100% !important;
+}
+.admin-nav {
+	
+}
+.nav-link{
+	color:black;
+	font-size:20px;
+	text-align:center;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;
+}

@@ -1,0 +1,47 @@
+.imgblock{
+	border-style: groove;
+	width:208px;
+	height:208px;
+	display:block;
+    margin:auto;
+	padding-left:0px !important;
+}
+
+hr {
+height: 1px;
+color: #00ff5d;
+background-color: blue;
+border: none;
+}
+.problock{
+	border-style: solid;
+    border-color: #CC0479;
+	border-width:1px;
+	text-align:center;
+	margin-top:30px;
+	background-color:#D0D9DB;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../images/homeback.jpg");
+
+    /* Set a specific height */
+    height: 1000px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top{
+	background-image:none !important;
+	background-color:transparent !important;
+	background-repeat: no-repeat;
+	width:100% !important;
+}
+.nav-link{
+	color:black !important;
+	font-size:20px;
+	font-weight:bold;
+}

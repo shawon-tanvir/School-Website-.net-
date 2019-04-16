@@ -1,0 +1,349 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "Contact";
+}
+@model SDProject.Models.Messeges
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link type="text/css" rel="stylesheet" href="~/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/footer.css" />
+     <link type="text/css" rel="stylesheet" href="~/css/contact.css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="parallax1">
+        <div class="top">
+
+
+            <div class="logoback">
+                <a href="@Url.Action("Index", "Home")">
+                    <img class="logo" src="~/images/MR.png">
+                </a>
+            </div>
+        </div>
+
+        <nav class="my-nav navbar navbar-expand-md navbar-primary ">
+            <div class="clearfix">
+                <button class="navbar-toggler navbutton" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notice.php">Notice Board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Academics", "Home")">Academics</a>
+                    </li>
+                    <li class=" nav-item">
+                        @{if (Session["fname"] == null)
+                            {
+                                <a class="nav-link" href="@Url.Action("LoginForm", "Home")">My Profile</a>
+                            }
+                            else
+                            {
+                                <a class="nav-link" href="@Url.Action("Profile", "Home" )">My Profile</a>
+                            } }
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Home")">Contacts</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a style="display:inline-block; color:black;" href="home.php">
+                        <h4> Home</h4>
+                    </a>
+                    <h4 style="display:inline-block;"> / </h4>
+                    <a style="display:inline-block;color:black;" href="contact.php">
+                        <h4> Contacts </h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <hr>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <h2> CONTACT LIST </h2>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8 conrow" style="">
+                    <div>
+                        <h5 style="float:left;">
+                            General Enquiries <h5>
+                                <h5 style="float:left;margin-left:80px;">
+                                    +88 3 9862 9214 <h5>
+                                        <br>
+                                        <h5 class="gmail" style=""> mrsupport@gmail.com <h5>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8 conrow" style="background-color:#E1E4E6;height:80px;">
+                    <div>
+                        <h5 style="float:left;">
+                            Principal's Office <h5>
+                                <h5 style="float:left;margin-left:90px;"> +88 3 9862 9202 <h5>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8" style="height:80px;">
+                    <div>
+                        <h5 style="float:left;">
+                            Addmission Office <h5>
+                                <h5 style="float:left;margin-left:75px;"> +88 3 9862 9200 <h5>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8 conrow" style="background-color:#E1E4E6;">
+                    <div>
+                        <h5 style="float:left;">
+                            Student Councilor <h5>
+                                <h5 style="float:left;margin-left:80px;">
+                                    +88 3 9862 9283 <h5>
+                                        <br>
+                                        <h5 class="gmail" style=""> support@gmail.com <h5>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <br><br>
+        <div class="bback">
+            <div class="container">
+                <br><br>
+                <div class="row ">
+
+                    <div class="col-md-8">
+                        <h2> OUR LOCATION </h2>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+                <br>
+                <div class="row ">
+
+                    <div class="col-md-9">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+
+                                <iframe class="frame" style="width:100%;height:350px;" id="gmap_canvas" src="https://maps.google.com/maps?q=24%C2%B031&#39;49.8%22N%2092%C2%B001&#39;58.4%22E&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+                                </a>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="margin-top:50px;">
+                        <h4>Rainbow villa</h4>
+                        <h6>128,Sadekpur Road,<br>Kulaura,Sylhet,Bangladesh</h6><br>
+                        <h4 style="margin-top:30px;">Crimpson House</h4>
+                        <h6>140,Sadekpur Road,<br>Kulaura,Sylhet,Bangladesh</h6>
+                    </div>
+
+                </div>
+                <br>
+            </div>
+        </div>
+        <br><br>
+        <div>
+
+
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <h2> Send Us A Message </h2>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <div class="thumbnail">
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="ch1">
+                                <h6>Enter Your Name</h6>
+                            </div>
+                            <div class="input-group ch">
+
+                                <!-- <input type="text" name="firstname" placeholder="First Name" class="form-control" value="<?php echo $firstname; ?>" />-->
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { name = "firstname", placeholder = "First Name", @class = "form-control", value = @Request["firstname"] } })
+                               
+                                <!-- <input type="text" name="lastname" placeholder="Last Name" class="form-control" value="<?php echo $lastname; ?>" />-->
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { name = "lastname",placeholder = "Last Name", @class = "form-control", value = @Request["lastname"] } })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div>
+                                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <!--<input type="text" name="email" class="form-control" placeholder="Eg. example.email.com" value="<?php echo $email; ?>" />-->
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { name = "email",placeholder = "Eg. example.email.com", @class = "form-control", value = @Request["email"] } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label>Phone No</label>
+                                <!--<input type="text" name="phone" class="form-control" placeholder="Eg. 01XXXXXXXXX" value="<?php echo $phone; ?>" />-->
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { name = "phone",placeholder = "Eg. 01XXXXXXXXX", @class = "form-control", value = @Request["phone"] } })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <!--<textarea name="message" class="form-control textarearesize" placeholder="Write your Message"><?php echo $message; ?></textarea>-->
+                                @Html.EditorFor(model => model.Messege, new { htmlAttributes = new { style= ".textarearesize{height:100px;}", name = "messege", placeholder = "Write your Message", @class = "textarearesize form-control", value = @Request["messege"] } })
+                                @Html.ValidationMessageFor(model => model.Messege, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group" align="center">
+                                <input type="submit" name="submit" class="btn btn-info" value="Send Message" />
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="footclass">
+                    <div class="container">
+                        <div class="row">
+
+
+                            <a style="margin-left:43%;margin-top:2%;" href="@Url.Action("Contact", "Home")">
+                                <span class="fa fa-phone" aria-hidden="true" style="margin-top:10%;font-size:40px; color:white;"></span>
+                                <span class="label">+88 08624 56038</span>
+                            </a>
+                            <a style="margin-left:5%;margin-top:2%;" href="https://www.google.com.au/maps/place/24%C2%B031&#39;49.8%22N+92%C2%B001&#39;58.4%22E/4024.530488,92.0307083,17z/data=!3m1!4b1!4m9!1m2!2m1!1sM.R+international+academy,kulaura!3m5!1s0x0:0x0!7e2!8m2!3d24.5304877!4d92.0328972?hl=en">
+
+                                <span class="fa fa-map" aria-hidden="true" style="margin-top:10%;font-size:40px; color:white;"></span>
+                                <span style="margin-top:5px;font-size:20px;color:white;display: block;vertical-align: middle;">MAP</span>
+                            </a>
+
+                        </div>
+                        <div class="row">
+                            <h4 style="color:white">_________________________________________________________________________________________________________________</h4>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h4 style="color:white;text-align:center;">
+                                    M.R INTERNATIONAL ACADEMY<h4>
+                                        <h6 style="color:white;text-align:center;">128,Sadekpur Road,Kulaura,Sylhet|+88 08624 56038<h6>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h6 style="color:white;text-align:right;margin-top:4%;">&copy; 2018 M.R International Academy, All Rights Reserved</h6>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <script src="~/js/jquery.min.js"></script>
+            <script src="~/js/popper.min.js"></script>
+            <script src="~/js/bootstrap.min.js"></script>
+    </body>
+    </html>

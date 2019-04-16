@@ -1,0 +1,244 @@
+
+
+
+.top{
+	background-color:transparent;
+	height:120px;
+}
+
+.logo{
+	
+	width:180px;
+	height:120px;
+	margin-left:0px;
+}
+.logoback{
+	
+	 width: 100%;
+    height: 100px !important;
+	position:absolute !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin:0;
+	padding:0;
+	
+}
+
+.buttonpos{
+	margin-top:10px;;
+	float:right;
+}
+.hoverbox{
+	
+	border:solid;
+	border-width:1px;
+	border-color:red;
+	width:90%!important;
+	margin:10px !important;
+	padding:0 !important;
+	background-size: cover;
+}	
+.hoverbox:hover .imagebox{ 
+    opacity: 0.3;
+	background-color:black;
+}
+.imagebox{
+	
+	
+	width:100% !important;
+	height:250px;
+	
+	
+}
+.nav-link{
+	color:#050505;
+	font-size:20px;
+	
+}
+.nav-link{
+	text-align:center;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;
+}
+
+.top{
+    position:absolute;
+    z-index:999 !important;
+    background:none;
+    width:100% !important;
+}
+
+
+
+.my-nav{
+	padding-left:200px;
+	margin-top:30px;
+	position:absolute !important;
+    z-index:999 !important;
+    background:none;
+    width:85% !important;
+	margin-left:15%;
+	}
+
+
+
+
+.h1s2{
+	color:#ff0055;
+}
+hr {
+height: 1px;
+color: #00ff5d;
+background-color: #00ff5d;
+border: none;
+}
+.butt{
+	
+}
+
+.my-carousel {
+    position:absolute;
+    top:0;
+}
+.videopart{
+	padding-left:10px !important;
+	padding-right:10px !important;
+	margin:0 !important;
+	background-size: cover;
+}
+.youtube{
+	width:100%;
+	height:400px;
+}
+.tourpart{
+	
+	margin-bottom:-24px;
+}
+.writingpart{
+	text-align:center;
+	padding-top:5%;
+	margin-left:-10px !important;
+	margin-right:-10px !important;
+}
+.takeatour{
+	font-size:90px;
+	margin-left:50px;
+}
+.takeatour2{
+	font-size:25px;
+	margin-left:50px;
+}
+.principal{
+	width:100%;
+	height:342px;
+	margin:0 !important;
+	padding:0 !important;
+	background-size: cover;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../images/homeback.jpg");
+
+    /* Set a specific height */
+    height: 2200px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	padding-bottom:200px;
+}
+.prinsp{
+	margin-top:2%;
+
+	width:100%;
+	
+	
+}
+.funtop{
+	font-size:30px;
+}
+
+.mar{
+	margin-left:-20px;
+}
+.prin{
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+.prinsp1{
+	
+	margin-left:3%;
+	margin-right:3%;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;
+}
+.prinsp1head{
+	margin-top:5%;
+	margin-left:3%;
+	margin-right:3%;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;
+}
+@media screen and (min-width: 766px) and (max-width: 1204px) {
+  .prinsp1{
+	font-size:12px;
+	margin-left:3%;
+	margin-right:3%;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;
+}
+.prinsp1head{
+	font-size:18px;
+	margin-left:3%;
+	margin-right:3%;
+	font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;
+}
+}
+@media screen and (max-width: 991px) {
+	.logback2{
+	background-image:url("../images/signupback.jpg");
+	width:100% !important;
+	background-repeat: no-repeat;
+}
+}
+@media screen and (max-width: 766px) {
+	.my-carousel {
+		position:relative !important ;
+		
+	}
+	.top{
+		position:relative !important;
+		z-index:0 !important;
+		background:transparent;
+		width:100% ;
+		padding-left:50px;
+    }
+	.my-nav{
+		margin-left:0;
+		position:relative !important;
+		z-index:0 !important;
+		background:#A3A0A0;
+		width:100% !important;
+		margin-top:0px;
+	}
+	.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+
+}
+@media screen and (max-width: 350px) {
+	.already{
+	margin-left:15%;
+	font-weight:bold;
+}
+.already2{
+	margin-left:35%;
+	font-weight:bold;
+}
+.mar{
+	margin-left:-30px;
+}
+}
