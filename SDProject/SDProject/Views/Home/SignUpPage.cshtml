@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "SignUpPage";
+}
+@model SDProject.Models.Login
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Assignment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/css/signuppage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+
+
+
+</head>
+
+<body>
+   
+
+        <!-- Modal content-->
+        <div class="loginBackground">
+            <div class="container logmod">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="logoback">
+                            <a href="@Url.Action("Index", "Home")">
+                                <img class="logo" src="~/images/MR.png">
+                            </a>
+                        </div>
+                        <br>
+                        <h1 class="head1">Register Yourself</h1>
+                        <br>
+                        <h2 class="head2">For Your Own Profile</h2>
+                    </div>
+                    <div class="col-lg-5 logback2">
+                        <div class="container">
+                            <?php echo $error; ?>
+                            <% @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <form class="signUpContainer" method="POST" autocomplete="off" id="formlogin">
+                                    <div class="row">
+                                        
+                                            @Html.ValidationMessageFor(model => model.FirstName, "", new {style="padding-left:15px;", @class = "text-danger" })
+                                        
+                                        <div class="input-group ch" style="margin-left:30px;margin-top:40px;">
+
+                                            <!-- <input type="text" name="firstname" placeholder="First Name" class="form-control" value="" /> -->
+                                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { name = "firstname", placeholder = "First Name", @class = "form-control",value=@Request["firstname"] } })
+                                           
+
+                                            <!-- <input type="text" name="lastname" placeholder="Last Name" class="form-control" value="" />-->
+
+                                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new {name = "lastname", placeholder = "Last Name", @class = "form-control", value = @Request["lastname"] } })
+                                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                        </div>
+                                        
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="color:white;"><i class="fa fa-key"></i></span>
+                                            <!--  <input style="margin-left:15px;" id="studentid" type="text" class="form-control" value="" name="studentid" placeholder="ID (**.**.**.***)" />-->
+                                            @Html.EditorFor(model => model.StudentId, new { htmlAttributes = new {name = "sid", style = "margin-left:15px;", placeholder = "ID (**.**.**.***)", @class = "form-control", value = @Request["id"] } })
+                                            @Html.ValidationMessageFor(model => model.StudentId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="color:white;"><i class="fa fa-envelope"></i></span>
+                                            <!--<input style="margin-left:15px;" id="signemail" type="text" class="form-control" name="signEmail" placeholder="Email" value="" />-->
+
+                                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { name = "email",style = "margin-left:15px;", placeholder = "Email", @class = "form-control", value = @Request["email"] } })
+                                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="color:white;"><i class="fa fa-lock"></i></span>
+                                            <!-- <input style="margin-left:20px;" id="signpassword1" type="password" class="form-control" name="signpassword1" placeholder="Password" value="" />-->
+
+                                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { name = "password",style = "margin-left:20px;", type = "password", placeholder = "Password", @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="color:white;"><i class="fa fa-lock"></i></span>
+                                            <!-- <input style="margin-left:20px;" id="password2" type="password" class="form-control" name="password2" placeholder="Confirm Password" value="" />-->
+
+                                            @Html.EditorFor(model => model.Confirmation, new { htmlAttributes = new { name = "confirmation",style = "margin-left:20px", type = "password", placeholder = "Confirm Password", @class = "form-control"} })
+                                            @Html.ValidationMessageFor(model => model.Confirmation, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-6">
+                                            <button type="submit" class="btn btn-primary btn-block" name="register">Sign Up</button>
+                                            <br>
+                                        </div>
+                                        <div class="col-3"></div>
+                                    </div>
+                                    </form>
+                            }
+                                    <div class="row">
+                                    
+                                        <h6 class="already">Already have an account?</h6>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-6 mar" ">
+
+
+                                            <a href="@Url.Action("LoginForm", "Home")" class="btn btn-info btn-block loginbutton" style="margin-bottom:20px;" role="button">Login</a>
+                                            <br>
+                                        </div>
+
+
+                                    </div>
+                                
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    }
+
+        <script src="~/js/jquery.min.js"></script>
+
+        <script src="~/js/popper.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+
+
+    
+
+    </body>
+</html>
+
+

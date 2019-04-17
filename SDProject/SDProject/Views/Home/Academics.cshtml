@@ -1,0 +1,283 @@
+﻿
+@{
+    ViewBag.Title = "Academics";
+}
+@model SDProject.Controllers.ViewModelDemo
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="~/css/academics.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/footer.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="top">
+
+
+        <div class="logoback">
+            <a href="@Url.Action("Index", "Home")">
+                <img class="logo" src="~/images/MR.png">
+            </a>
+        </div>
+    </div>
+
+    <nav class="my-nav navbar navbar-expand-md navbar-primary ">
+        <div class="clearfix">
+            <button class="navbar-toggler navbutton" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home") ">Home</a>
+                </li>
+
+                <li class=" nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notice.php">Notice Board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Academics", "Home")">Academics</a>
+                </li>
+                <li class=" nav-item">
+                    @{if (Session["fname"] == null)
+                        {
+                            <a class="nav-link" href="@Url.Action("LoginForm", "Home")">My Profile</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="@Url.Action("Profile", "Home" )">My Profile</a>
+                        } }
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">Contacts</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <br /><br /><br /><br />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="margin:0 !important;padding:0 !important;">
+                <img class="d-block w-100" style="opacity:.8;width:100%;heught:100%;margin:0 !important;padding:0 !important;" src="~/images/emailback.jpg" alt="First">
+                <div>
+                </div>
+                <div>
+                    <br>
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 style="font-family: Comic Sans MS, cursive, sans-serif; font-style: italic;font-weight:bold;color:#5F5E6B; font-size:35px;; float:left;">Our Informaton</h1>
+                                <br>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 style="color:#5F5E6B; font-size:35px;; float:right;">Principal</h1>
+                                <br>
+                                <hr>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+
+
+                            @foreach (var item in Model.Principal)
+                            {
+                                <div class='col-md-4'>
+                                    <div class='profileblock'>
+                                        <div class='imgblock'>
+                                            <img class="rounded imgprin" src="~/passport/@item.ImagePath" />'
+
+                                        </div>
+
+                                        <div class='name'>
+                                            <br>
+                                            <h5>@item.Name</h5>
+                                            <h6>Contact No :+880 @item.Phone </h6 >
+                                            <h6>Email: @item.Email </h6 >
+                                            <h6>Subject: @item.subject </h6>
+                                            <br>
+                                        </div >
+                                     </div > 
+                                    <br>
+                                </div >
+                            }
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 style="color:#5F5E6B; font-size:35px;; float:right;">Teachers</h1>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        @foreach (var item in Model.Teacher)
+                        {
+                            <div class='col-md-4'>
+                                <div class='profileblock'>
+                                    <div class='imgblock'>
+                                        <img class="rounded imgprin" src="~/passport/@item.ImagePath" />'
+
+                                    </div>
+
+                                    <div class='name'>
+                                        <br>
+                                        <h5>@item.Name</h5>
+                                        <h6>Contact No :+880 @item.Phone </h6>
+                                        <h6>Email: @item.Email </h6>
+                                        <h6>Subject: @item.subject </h6>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        }
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 style="color:#5F5E6B; font-size:35px;; float:right;">Officials</h1>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        @foreach (var item in Model.Officials)
+                        {
+                            <div class='col-md-4'>
+                                <div class='profileblock'>
+                                    <div class='imgblock'>
+                                        <img class="rounded imgprin" src="~/passport/@item.ImagePath" />'
+
+                                    </div>
+
+                                    <div class='name'>
+                                        <br>
+                                        <h5>@item.Name</h5>
+                                        <h6>Contact No :+880 @item.Phone </h6>
+                                        <h6>Email: @item.Email </h6>
+                                        <h6>Designation: @item.subject </h6>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        }
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 style="color:#5F5E6B; font-size:35px;; float:right;">Librarian</h1>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        @foreach (var item in Model.Librarian)
+                        {
+                            <div class='col-md-4'>
+                                <div class='profileblock'>
+                                    <div class='imgblock'>
+                                        <img class="rounded imgprin" src="~/passport/@item.ImagePath" />'
+
+                                    </div>
+
+                                    <div class='name'>
+                                        <br>
+                                        <h5>@item.Name</h5>
+                                        <h6>Contact No :+880 @item.Phone </h6>
+                                        <h6>Email: @item.Email </h6>
+                                        <h6>Designation: @item.subject </h6>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        }
+                    </div>
+
+
+                </div>
+
+                <script src="~/js/jquery.min.js"></script>
+                <script src="~/js/popper.min.js"></script>
+                <script src="~/js/bootstrap.min.js"></script>
+
+                <br>
+                <div class="footclass">
+                    <div class="container">
+                        <div class="row">
+
+
+                            <a style="margin-left:43%;margin-top:2%;" href="@Url.Action("Contact", "Home")">
+                                <span class="fa fa-phone" aria-hidden="true" style="margin-top:10%;font-size:40px; color:white;"></span>
+                                <span class="label">+88 08624 56038</span>
+                            </a>
+                            <a style="margin-left:5%;margin-top:2%;" href="https://www.google.com.au/maps/place/24%C2%B031&#39;49.8%22N+92%C2%B001&#39;58.4%22E/4024.530488,92.0307083,17z/data=!3m1!4b1!4m9!1m2!2m1!1sM.R+international+academy,kulaura!3m5!1s0x0:0x0!7e2!8m2!3d24.5304877!4d92.0328972?hl=en">
+
+                                <span class="fa fa-map" aria-hidden="true" style="margin-top:10%;font-size:40px; color:white;"></span>
+                                <span style="margin-top:5px;font-size:20px;color:white;display: block;vertical-align: middle;">MAP</span>
+                            </a>
+
+                        </div>
+                        <div class="row">
+                            <h4 style="color:white">_________________________________________________________________________________________________________________</h4>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h4 style="color:white;text-align:center;">
+                                    M.R INTERNATIONAL ACADEMY<h4>
+                                        <h6 style="color:white;text-align:center;">128,Sadekpur Road,Kulaura,Sylhet|+88 08624 56038<h6>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <h6 style="color:white;text-align:right;margin-top:4%;">&copy; 2018 M.R International Academy, All Rights Reserved</h6>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+</body>
+</html>
+
+
