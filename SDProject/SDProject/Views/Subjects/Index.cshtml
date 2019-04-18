@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SDProject.Models.Subjects>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Subid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Subid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Subid })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    <form style="display:inline-block;" class="Check12" method="post" autocomplete="off">
+
+        <input type="submit" class="btn btn-info btn-sm " name="submitbutton" formaction="" value="Home" />
+    </form>
+</div>
