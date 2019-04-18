@@ -38,6 +38,7 @@ namespace SDProject.Controllers
         // GET: Teachers/Create
         public ActionResult Create()
         {
+            ViewBag.TeacherList = new SelectList(db.Subjects, "Name", "Name");
             return View();
         }
 
@@ -113,6 +114,12 @@ namespace SDProject.Controllers
             db.Teachers.Remove(teachers);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult Index(Teachers teachers)
+        {
+           
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)

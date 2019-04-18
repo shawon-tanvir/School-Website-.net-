@@ -10,117 +10,112 @@ using SDProject.Models;
 
 namespace SDProject.Controllers
 {
-    public class ResultsController : Controller
+    public class NoticesController : Controller
     {
         private SchoolAdminContext db = new SchoolAdminContext();
 
-        // GET: Results
+        // GET: Notices
         public ActionResult Index()
         {
-            return View(db.Results.ToList());
+            return View(db.Notices.ToList());
         }
 
-        // GET: Results/Details/5
+        // GET: Notices/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Notices notices = db.Notices.Find(id);
+            if (notices == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(notices);
         }
 
-        // GET: Results/Create
+        // GET: Notices/Create
         public ActionResult Create()
         {
-            //var subjects = db.Subjects.ToList();
-            ViewBag.QualList = new SelectList(db.Subjects, "Name", "Name");
-            ViewBag.StudentList = new SelectList(db.Students, "StudentId","StudentId");
-            //var viewModel = new ListSubjectViewModel { Subjects = subjects };
-
             return View();
         }
 
-        // POST: Results/Create
+        // POST: Notices/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Rid,Marks,Class,term,Grade,Subject,StudentId")] Results results)
+        public ActionResult Create([Bind(Include = "Nid,Heading,Description")] Notices notices)
         {
             if (ModelState.IsValid)
             {
-                db.Results.Add(results);
+                db.Notices.Add(notices);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(results);
+            return View(notices);
         }
 
-        // GET: Results/Edit/5
+        // GET: Notices/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Notices notices = db.Notices.Find(id);
+            if (notices == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(notices);
         }
 
-        // POST: Results/Edit/5
+        // POST: Notices/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Rid,Marks,Class,term,Grade,Subject,StudentId")] Results results)
+        public ActionResult Edit([Bind(Include = "Nid,Heading,Description")] Notices notices)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(results).State = EntityState.Modified;
+                db.Entry(notices).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(results);
+            return View(notices);
         }
 
-        // GET: Results/Delete/5
+        // GET: Notices/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Notices notices = db.Notices.Find(id);
+            if (notices == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(notices);
         }
 
-        // POST: Results/Delete/5
+        // POST: Notices/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Results results = db.Results.Find(id);
-            db.Results.Remove(results);
+            Notices notices = db.Notices.Find(id);
+            db.Notices.Remove(notices);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Index(Results results)
+        public ActionResult Index(Notices notices)
         {
           
             return RedirectToAction("Index", "Home");

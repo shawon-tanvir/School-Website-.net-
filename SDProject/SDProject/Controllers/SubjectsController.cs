@@ -10,119 +10,114 @@ using SDProject.Models;
 
 namespace SDProject.Controllers
 {
-    public class ResultsController : Controller
+    public class SubjectsController : Controller
     {
         private SchoolAdminContext db = new SchoolAdminContext();
 
-        // GET: Results
+        // GET: Subjects
         public ActionResult Index()
         {
-            return View(db.Results.ToList());
+            return View(db.Subjects.ToList());
         }
 
-        // GET: Results/Details/5
+        // GET: Subjects/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Subjects subjects = db.Subjects.Find(id);
+            if (subjects == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(subjects);
         }
 
-        // GET: Results/Create
+        // GET: Subjects/Create
         public ActionResult Create()
         {
-            //var subjects = db.Subjects.ToList();
-            ViewBag.QualList = new SelectList(db.Subjects, "Name", "Name");
-            ViewBag.StudentList = new SelectList(db.Students, "StudentId","StudentId");
-            //var viewModel = new ListSubjectViewModel { Subjects = subjects };
-
             return View();
         }
 
-        // POST: Results/Create
+        // POST: Subjects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Rid,Marks,Class,term,Grade,Subject,StudentId")] Results results)
+        public ActionResult Create([Bind(Include = "Subid,Name")] Subjects subjects)
         {
             if (ModelState.IsValid)
             {
-                db.Results.Add(results);
+                db.Subjects.Add(subjects);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(results);
+            return View(subjects);
         }
 
-        // GET: Results/Edit/5
+        // GET: Subjects/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Subjects subjects = db.Subjects.Find(id);
+            if (subjects == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(subjects);
         }
 
-        // POST: Results/Edit/5
+        // POST: Subjects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Rid,Marks,Class,term,Grade,Subject,StudentId")] Results results)
+        public ActionResult Edit([Bind(Include = "Subid,Name")] Subjects subjects)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(results).State = EntityState.Modified;
+                db.Entry(subjects).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(results);
+            return View(subjects);
         }
 
-        // GET: Results/Delete/5
+        // GET: Subjects/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Results results = db.Results.Find(id);
-            if (results == null)
+            Subjects subjects = db.Subjects.Find(id);
+            if (subjects == null)
             {
                 return HttpNotFound();
             }
-            return View(results);
+            return View(subjects);
         }
 
-        // POST: Results/Delete/5
+        // POST: Subjects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Results results = db.Results.Find(id);
-            db.Results.Remove(results);
+            Subjects subjects = db.Subjects.Find(id);
+            db.Subjects.Remove(subjects);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Index(Results results)
+        public ActionResult Index(Subjects subjects)
         {
-          
+            
             return RedirectToAction("Index", "Home");
         }
 

@@ -31,6 +31,23 @@ namespace SDProject.Controllers
         {
             return View();
         }
+        
+        public ActionResult NoticeBoard()
+        {
+            //if (db.Notices.Any(s => s.) { }
+            //var res = db.Notices.SqlQuery("SELECT * FROM Notices WHERE Nid=(SELECT max(Nid) FROM Notices)").ToList();
+            //int lastid = Convert.ToInt32(res.);
+            Notices max = db.Notices.OrderByDescending(p => p.Nid).FirstOrDefault();
+
+            Notices min= db.Notices.OrderBy(p => p.Nid).FirstOrDefault();
+            Session["noticefirst"] = min.Nid;
+            Session["noticelast"] = max.Nid;
+            Session["keeplast"] = max.Nid;
+            Session["notice"] = max.Description;
+
+            //ViewBag.res = res;
+            return View();
+        }
         public ActionResult Academics()
         {
             
@@ -123,7 +140,14 @@ namespace SDProject.Controllers
                         Console.WriteLine("Check1");
                     }
                     Console.WriteLine("Check2");
-                    return View("Profile");
+                    if (Session["fname"].Equals("admin"))
+                    {
+                        return RedirectToAction("Create", "Messeges");
+                    }
+                    else
+                    {
+                        return View("Profile");
+                    }
                 }
                 else
                 {
@@ -181,6 +205,14 @@ namespace SDProject.Controllers
         public ActionResult Profile()
         {
             Session["table"] = "false";
+            if (Session["fname"] == null)
+            {
+                return View("LoginForm");
+            }
+            else if (Session["fname"].Equals("admin"))
+            {
+                return RedirectToAction("Index", "Messeges");
+            }
             return View();
         }
 
@@ -204,6 +236,47 @@ namespace SDProject.Controllers
             var res = db.Results.SqlQuery("Select * from Results where Class='"+Class+"' and term='"+term+"' and StudentId='"+Session["id"]+"'").ToList();
             ViewBag.res = res;
             return View("Profile",res);
+        }
+        
+
+        [HttpPost]
+        public ActionResult NextButton(Notices notices)
+        {
+
+            int keep = Convert.ToInt32(Session["keeplast"]);
+            int lastid = Convert.ToInt32(Session["noticelast"]);
+            if (lastid < keep)
+            {
+                Notices check = db.Notices.First(a => a.Nid == lastid + 1);
+
+                if (check.Description != null)
+                {
+                    Session["noticelast"] = lastid + 1;
+                    Session["notice"] = check.Description;
+                }
+            }
+
+            return View("NoticeBoard");
+        }
+
+        [HttpPost]
+        public ActionResult PreviousButton(Notices notices)
+        {
+            
+            int firstid= Convert.ToInt32(Session["noticefirst"]);
+            int lastid = Convert.ToInt32(Session["noticelast"]);
+            if (lastid > firstid)
+            {
+                Notices check = db.Notices.First(a => a.Nid == lastid - 1);
+
+                if (check.Description != null)
+                {
+                    Session["noticelast"] = lastid - 1;
+                    Session["notice"] = check.Description;
+                }
+            }
+          
+            return View("NoticeBoard");
         }
 
 
